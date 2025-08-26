@@ -1,0 +1,360 @@
+import { Button, FlatList, Image, ImageBackground, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
+
+import { LogBox } from 'react-native';
+
+import Modal from 'react-native-modal';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { useNavigation } from '@react-navigation/native';
+LogBox.ignoreAllLogs(); 
+
+interface ServerData {
+  LangWiseWords: string | null;
+  // Add other properties if your server response contains them
+}
+type RootStackParamList = {
+  Homechnagescreen: undefined; // No parameters
+};
+
+type HomechangeStackNavigationProp = StackNavigationProp<RootStackParamList, 'Homechnagescreen'>;
+
+const Homepraveen = (props:any) => {
+  const Package = props.route.params.Package;
+  const Medium = props.route.params.Medium;
+  const { ApiResponse } =  props.route.params;
+
+  // State to store the data fetched from the server
+  
+  const [langWiseWordsToRender, setLangWiseWordsToRender] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (ApiResponse && ApiResponse.length > 0) {
+      const indicesToPrint = [ 57,24];
+
+      const wordsToRender = indicesToPrint
+        .filter(index => index >= 0 && index < ApiResponse.length)
+        .map(index => ApiResponse[index]?.LangWiseWords);
+
+      setLangWiseWordsToRender(wordsToRender);
+
+    }
+  }, [ApiResponse]);
+
+
+  const staticImages = [
+   
+    require('../../../assets/img/lessonn.png'),
+     
+    
+    require('../../../assets/img/wdictionary.png'),
+      
+   
+  ];
+  //handle on press on hader 
+          const [isModalVisible, setModalVisible] = useState(false);
+          const navigation = useNavigation<HomechangeStackNavigationProp>();
+
+          const toggleModal = () => {
+            setModalVisible(!isModalVisible);
+          };
+
+          // const handleBackPress =()=>{
+
+          //   RNExitApp.exitApp();
+
+          // }
+
+          const handleHomePress = () => {
+            navigation.navigate('Homechnagescreen');
+          };
+
+    // Render item for FlatList
+    const renderItem = ({ item, index }:any) => {
+      // Display static image above LangWiseWords
+      const imageSource = staticImages[index % staticImages.length];
+  
+      return (
+        <TouchableOpacity onPress={() => handleItemPress(item, index)}>
+        <View style={styles.itemContainer}>
+          
+          <Image source={imageSource} style={styles.imageforcard} />
+          <Text key={index} style={styles.name}>{item}</Text>
+        
+        </View>
+        </TouchableOpacity>
+      );
+    };
+
+
+  const handleItemPress = (item: any, index: number) => {
+    // Use the index to determine the corresponding component
+    switch (index) {
+      case 0:
+        props.navigation.navigate('Lessonpraveen' ,{ ApiResponse,Package,Medium,});
+        break;
+      case 1:
+        props.navigation.navigate('Dictionarytitlespraveen' ,{ ApiResponse,Package,Medium,});
+        break;
+      
+      default:
+        // Handle other cases if needed
+    }
+  };
+
+  return (
+
+    <View style={{flex:1}}>
+      <SafeAreaView style={{ backgroundColor: '#0D6EFD' }}>  
+        <View style={styles.header}>
+                {/* Left side - Back icon */}
+                {/* <TouchableOpacity  onPress={handleBackPress}>
+                  <MaterialIcons style={styles.headerIcon} name="close" size={32} color="white" />
+                </TouchableOpacity> */}
+
+
+              {/* <MaterialIcons
+                      name="close"
+                      size={32}
+                      color="white"
+                      onPress={toggleModal}
+                    />
+
+             <Modal isVisible={isModalVisible} style={styles.modalContainer}>
+                  <View style={styles.modalContent}>
+                    <Text style={styles.modalText}>Do you want to close LILA App?</Text>
+                    <View style={styles.buttonContainer}>
+                    <TouchableOpacity onPress={handleBackPress} style={[styles.button, { backgroundColor: '#0D6EFD', }]}>
+                        <Text style={styles.buttonText}>Yes</Text>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity onPress={toggleModal} style={[styles.button, { backgroundColor: '#0D6EFD' }]}>
+                        <Text style={styles.buttonText}>No</Text>
+                      </TouchableOpacity>
+                      
+                    </View>
+                  </View>
+                </Modal> */}
+
+                <Text style={styles.headerTitle}>प्रवीण</Text>
+
+                {/* Right side - Home icon */}
+                <TouchableOpacity onPress={handleHomePress}>
+                  <MaterialIcons  style={styles.headerIcon} name="settings" size={32} color="white" />
+                </TouchableOpacity>
+        </View>
+        </SafeAreaView>
+
+
+
+          <ImageBackground
+          source={require('../../../assets/img/bg.png')} // Provide the path to your image
+          style={styles.backgroundImage}
+           >
+          <View style={styles.container}>
+
+                  {/* Three Images in a Column logo... */}
+                  <View style={styles.rowContainer}>
+                      <Image
+                        source={require('../../../assets/img/logotext.png')}
+                        style={styles.image1}
+                      />
+                      <Image
+                        source={require('../../../assets/img/lionimg.png')}
+                        style={styles.image}
+                      />
+                      <Image
+                        source={require('../../../assets/img/cdac.png')}
+                        style={styles.image1}
+                      />
+                  </View>
+                  {/*  Images in a Column of logo lila hindi prabodh praveen pragya...... */}
+                  <View style={styles.columnContainer}>
+                      <Image
+                        source={require('../../../assets/img/logologin.png')}
+                        style={styles.image3}
+                      /> 
+                              
+                  </View>
+
+                  <View style={styles.cardcontainer}>
+                  <FlatList
+                      data={langWiseWordsToRender}
+                      renderItem={renderItem}
+                      keyExtractor={(item, index) => index.toString()}
+                      numColumns={2}
+                  />
+                  
+        </View>
+
+
+
+
+
+
+
+
+          {/* <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <Text style={{ fontSize: 20 }}>praveen screen start here...</Text>
+          <Text>Package Value: {Package}</Text>
+          <Text>Medium Value: {Medium}</Text>
+          <Button
+              title="go to praveen Dictionarytitlespraveen"
+              onPress={() => {
+                  props.navigation.navigate('Dictionarytitlespraveen');
+              }
+              }
+          />
+          <Button
+              title="go to Lessonpraveen"
+              onPress={() => {
+                  props.navigation.navigate('Lessonpraveen');
+              }
+              }
+          />
+          </View> */}
+
+
+
+          </View>
+          </ImageBackground>
+    </View>      
+        )
+}
+
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
+  },
+  content: {
+    flex: 1,
+    padding: 20,
+  },
+  rowContainer: {
+    flexDirection: 'row', // Display images in a row
+    justifyContent: 'space-between', // Distribute space evenly between row images
+    marginBottom: 20, // Add space between rows and columns
+  },
+  columnContainer: {
+    flexDirection: 'column', // Display images in a column
+    alignItems: 'center', // Center images in the column
+    padding:10
+  },
+  image: {
+    width: 110, // Set the desired width for the images
+    height: 110, // Set the desired height for the images
+    marginHorizontal: 10,
+    marginTop:10 ,// Adjust the horizontal spacing between images
+    borderRadius:10
+  },
+  image1: {
+    width: 80, // Set the desired width for the images
+    height: 80, // Set the desired height for the images
+    marginHorizontal: 10,
+    marginTop:20 ,// Adjust the horizontal spacing between images
+    borderRadius:10
+  },
+  image3: {
+    width:'100%', // Set the desired width for the images
+    height: 100, // Set the desired height for the images
+    borderRadius:10,
+  
+ },
+ 
+ 
+ 
+cardcontainer: {
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+},
+itemContainer: {
+  margin: 10, // Adjust the spacing as needed
+  alignItems: 'center',
+  marginHorizontal:40
+},
+imageforcard: {
+  width: 100,
+  height: 100,
+  borderRadius: 10,
+  resizeMode: 'cover',
+},
+name: {
+  fontSize: 14,
+  fontWeight: 'bold',
+  marginTop: 5,
+  color:'black'
+},
+columnWrapper: {
+  marginHorizontal: 10, // Adjust the spacing between columns
+},
+
+//header and modle
+      header:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: 4,
+        backgroundColor: '#0D6EFD',
+        paddingVertical: 12,  }
+      ,
+       headerIcon: {
+         width: 30,
+         alignItems: 'center',
+       },
+       headerTitle: {
+        color: 'white',
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        flex: 1,
+       },
+       closeButton: {
+        color: 'white',
+        fontSize: 32,
+      },
+      modalContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      modalContent: {
+        width: 350,
+        backgroundColor: 'white',
+        padding: 20,
+        borderRadius: 10,
+      },
+      modalText: {
+        marginBottom: 20,
+        textAlign: 'center',
+        color:'black'
+      },
+      buttonContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+      },
+      button: {
+        flex: 1,
+        marginHorizontal: 5,
+        padding: 10,
+        borderRadius: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      buttonText: {
+        color: 'white',
+        textAlign: 'center',
+        fontWeight:'bold'
+      },
+     
+})
+
+export default Homepraveen
