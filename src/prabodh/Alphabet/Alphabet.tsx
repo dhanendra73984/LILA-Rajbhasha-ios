@@ -102,10 +102,10 @@ function Alphabet(props:any) {
             headerTintColor: 'white', 
             headerTitleAlign: 'center', 
             drawerItemStyle: {
-              marginVertical: 0, // Adjust the vertical margin as needed
+              marginVertical: 0, 
               marginHorizontal: 0,
-              paddingVertical: 0, // Remove vertical padding
-              paddingHorizontal: 0, // Remove horizontal padding
+              paddingVertical: 0, 
+              paddingHorizontal: 0, 
             },
           }}
         >
