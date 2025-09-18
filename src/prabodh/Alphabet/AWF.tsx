@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     borderRadius: 1, 
     padding: 2,
     borderWidth: 2, 
-    borderColor: 'black', // Add border color
+    borderColor: 'black', 
     elevation:3,
     
    
