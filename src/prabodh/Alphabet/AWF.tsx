@@ -16,7 +16,7 @@ const AWF = (props: any) => {
     const fetchData = async () => {
       try {
         // Determine the total number of pages here
-        // Assuming you have a fixed total number or you fetch it from somewhere
+      
         const total = 13; // Change this to the actual total number of pages
         setTotalPages(total);
 
