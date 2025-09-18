@@ -97,10 +97,10 @@ function Alphabet(props:any) {
           initialRouteName={langWiseWords[119]}
           screenOptions={{
             headerStyle: {
-              backgroundColor: '#0D6EFD', // Set the header background color to blue
+              backgroundColor: '#0D6EFD', 
             },
-            headerTintColor: 'white', // Set the text color of the header title and drawer button
-            headerTitleAlign: 'center', // Center the header title
+            headerTintColor: 'white', 
+            headerTitleAlign: 'center', 
             drawerItemStyle: {
               marginVertical: 0, // Adjust the vertical margin as needed
               marginHorizontal: 0,
