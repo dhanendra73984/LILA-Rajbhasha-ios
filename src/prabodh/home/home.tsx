@@ -6,7 +6,7 @@ import axios from 'axios';
 import Modal from 'react-native-modal';
 
 import { LogBox } from 'react-native';
-// import RNExitApp from 'react-native-exit-app';
+
 import { RouteProp, useNavigation } from '@react-navigation/native';
 
 LogBox.ignoreAllLogs(); 
