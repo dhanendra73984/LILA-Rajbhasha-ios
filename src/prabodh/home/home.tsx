@@ -16,7 +16,7 @@ LogBox.ignoreAllLogs();
 interface ServerData {
   LangWiseWords: string | null;
   
-  // Add other properties if your server response contains them
+
 }
 
 
