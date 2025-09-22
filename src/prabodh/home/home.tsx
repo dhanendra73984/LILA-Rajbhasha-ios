@@ -136,7 +136,7 @@ const home : React.FC = (props:any) => {
         props.navigation.navigate('Dictionarytitles',{ ApiResponse,Package,Medium,});
         break;
       default:
-        // Handle other cases if needed
+       
     }
   };
 
