@@ -80,7 +80,7 @@ const home : React.FC = (props:any) => {
 
   // const handleBackPress =()=>{
 
-  //   RNExitApp.exitApp();
+
 
   // }
 
