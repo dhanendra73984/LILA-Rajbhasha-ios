@@ -194,7 +194,7 @@ const home : React.FC = (props:any) => {
 
     
     
-     {/* Three Images in a Column logo... */}
+    
      <View style={styles.rowContainer}>
           <Image
             source={require('../../../assets/img/logotext.png')}
