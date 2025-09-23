@@ -268,7 +268,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
-    flex: 1, // ensures it expands
+    flex: 1, 
    },
    headerCenter: {
     flex: 1,
@@ -301,10 +301,10 @@ const styles = StyleSheet.create({
     borderRadius:10
   },
   image1: {
-    width: 80, // Set the desired width for the images
-    height: 80, // Set the desired height for the images
+    width: 80, 
+    height: 80, 
     marginHorizontal: 10,
-    marginTop:20 ,// Adjust the horizontal spacing between images
+    marginTop:20 ,
     borderRadius:10
   },
   image3: {
