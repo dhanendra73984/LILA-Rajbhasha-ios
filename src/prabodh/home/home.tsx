@@ -117,7 +117,6 @@ const home : React.FC = (props:any) => {
 
 
 
-  // //handling flatlist navigation.........
 
 
   const handleItemPress = (item: any, index: number) => {
