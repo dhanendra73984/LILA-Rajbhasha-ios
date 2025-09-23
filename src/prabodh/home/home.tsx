@@ -188,7 +188,7 @@ const home : React.FC = (props:any) => {
 
 
     <ImageBackground
-    source={require('../../../assets/img/bg.png')} // Provide the path to your image
+    source={require('../../../assets/img/bg.png')} 
     style={styles.backgroundImage}>
       
     <View style={styles.container}>
