@@ -65,8 +65,7 @@ const home : React.FC = (props:any) => {
     // Add more images as needed
   ];
    
-  //handing header button navigation 
-
+ 
   const [isModalVisible, setModalVisible] = useState(false);
   const navigation = useNavigation()
   
