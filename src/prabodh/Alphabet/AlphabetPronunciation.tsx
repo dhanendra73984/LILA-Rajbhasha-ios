@@ -21,7 +21,7 @@ const AlphabetPronunciation = (proos:any) => {
         // Play the sound file using react-native-sound-player
         SoundPlayer.playUrl(url);
   
-        // Handle other actions if needed
+       
         console.log(`Pressed on ${item}`);
         console.log('Playing audio file:', url);
       } catch (error) {
@@ -77,14 +77,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: '#ccc',
-    margin: '3%',//margin fro the letters
+    margin: '3%',
     marginBottom:3,
     elevation:1,
     backgroundColor: '#0D6EFD',
     borderRadius: 5,
   },
   text: {
-      color: 'white', // White text color,
+      color: 'white', 
     fontSize: 16,
   },
   gridContainer: {
