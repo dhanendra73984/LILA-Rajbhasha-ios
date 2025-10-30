@@ -8,7 +8,7 @@ import WebView from 'react-native-webview';
 const AlphabeticalOrder = (props:any) => {
 
   const {ApiResponse,Package,Medium} = props.route.params;
-  const langWiseWords = ApiResponse.map((item:any) => item.LangWiseWords);//for mapping index
+  const langWiseWords = ApiResponse.map((item:any) => item.LangWiseWords);
   
   
   const [htmlContent, setHtmlContent] = useState<string | null>(null);//for rendering html page 
