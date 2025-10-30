@@ -11,7 +11,7 @@ const AlphabeticalOrder = (props:any) => {
   const langWiseWords = ApiResponse.map((item:any) => item.LangWiseWords);
   
   
-  const [htmlContent, setHtmlContent] = useState<string | null>(null);//for rendering html page 
+  const [htmlContent, setHtmlContent] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
