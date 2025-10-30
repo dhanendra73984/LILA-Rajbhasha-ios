@@ -45,7 +45,7 @@ const AlphabeticalOrder = (props:any) => {
               source={{ html: htmlContent }}
               javaScriptEnabled={true} 
               bouncesZoom={true}      
-              scalesPageToFit={false}  // Disable automatic scaling
+              scalesPageToFit={false}  
               style={{ backgroundColor: 'transparent' }}  // Set background color to transparent
               containerStyle={{ flex: 1, padding: 4 ,marginRight:8}}  // Adjust container style as needed
             />
