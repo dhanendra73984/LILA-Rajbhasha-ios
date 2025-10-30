@@ -33,7 +33,7 @@ const AlphabeticalOrder = (props:any) => {
       <View style={{flex:1}}>
 
     <ImageBackground
-    source={require('../../../assets/img/bg.png')} // Provide the path to your image
+    source={require('../../../assets/img/bg.png')} 
     style={styles.backgroundImage}>
 
 
