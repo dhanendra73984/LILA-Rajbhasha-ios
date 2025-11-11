@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
   arrowIcon: {
     backgroundColor: '#EAF0F1',
     borderRadius: 1, 
-    borderWidth: 2, // Add border width
+    borderWidth: 2,
     borderColor: 'black', // Add border color
     elevation:3,
     
