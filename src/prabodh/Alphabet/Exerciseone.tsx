@@ -15,8 +15,7 @@ const Exerciseone = (props: any) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Determine the total number of pages here
-        // Assuming you have a fixed total number or you fetch it from somewhere
+      
         const total = 2; // Change this to the actual total number of pages
         setTotalPages(total);
 
