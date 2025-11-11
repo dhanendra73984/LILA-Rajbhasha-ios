@@ -16,7 +16,7 @@ const Exerciseone = (props: any) => {
     const fetchData = async () => {
       try {
       
-        const total = 2; // Change this to the actual total number of pages
+        const total = 2; 
         setTotalPages(total);
 
         const response = await axios.get(
