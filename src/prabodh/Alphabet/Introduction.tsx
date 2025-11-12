@@ -46,7 +46,7 @@ const Introduction = (props:any) => {
               javaScriptEnabled={true} 
               bouncesZoom={true}     
               scalesPageToFit={false} 
-              style={{ backgroundColor: 'transparent' }}  // Set background color to transparent
+              style={{ backgroundColor: 'transparent' }}  
               containerStyle={{ flex: 1, padding: 4 ,marginRight:8}}  // Adjust container style as needed
             />
           )}
