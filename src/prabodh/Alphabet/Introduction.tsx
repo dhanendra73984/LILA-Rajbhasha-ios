@@ -47,7 +47,7 @@ const Introduction = (props:any) => {
               bouncesZoom={true}     
               scalesPageToFit={false} 
               style={{ backgroundColor: 'transparent' }}  
-              containerStyle={{ flex: 1, padding: 4 ,marginRight:8}}  // Adjust container style as needed
+              containerStyle={{ flex: 1, padding: 4 ,marginRight:8}} 
             />
           )}
         </View>    
