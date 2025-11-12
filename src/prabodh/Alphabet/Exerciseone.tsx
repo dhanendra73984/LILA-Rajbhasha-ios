@@ -4,6 +4,8 @@ import axios from 'axios';
 import WebView from 'react-native-webview';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
+
+
 const Exerciseone = (props: any) => {
   const { ApiResponse, Package, Medium } = props.route.params;
   const langWiseWords = ApiResponse.map((item: any) => item.LangWiseWords);
