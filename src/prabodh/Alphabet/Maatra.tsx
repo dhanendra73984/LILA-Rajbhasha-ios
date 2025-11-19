@@ -17,7 +17,7 @@ const Maatra = (props: any) => {
       try {
        
         // Assuming you have a fixed total number or you fetch it from somewhere
-        const total = 2; // Change this to the actual total number of pages
+        const total = 2; 
         setTotalPages(total);
 
         const response = await axios.get(
