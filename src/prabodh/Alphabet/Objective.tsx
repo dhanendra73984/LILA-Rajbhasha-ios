@@ -42,7 +42,7 @@ const Objective = (props:any) => {
               originWhitelist={['*']}
               source={{ html: htmlContent }}
               javaScriptEnabled={true} 
-              bouncesZoom={true}      // Allow the WebView content to be zoomed
+              bouncesZoom={true}     
               scalesPageToFit={false}  // Disable automatic scaling
               style={{ backgroundColor: 'transparent' }}  // Set background color to transparent
               containerStyle={{ flex: 1, padding: 4 }}  // Adjust container style as needed
