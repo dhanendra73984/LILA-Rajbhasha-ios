@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#EAF0F1',
     borderRadius: 1, // Adjust the border radius to your preference
     padding: 2,
-    borderWidth: 2, // Add border width
+    borderWidth: 2, 
     borderColor: 'black', 
     elevation:3,
     
