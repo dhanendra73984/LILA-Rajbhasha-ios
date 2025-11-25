@@ -43,7 +43,7 @@ const Pronunciation = (props:any) => {
             <WebView
               originWhitelist={['*']}
               source={{ html: htmlContent }}
-              javaScriptEnabled={true} // Enable JavaScript for the WebView
+              javaScriptEnabled={true} 
               bouncesZoom={true}      // Allow the WebView content to be zoomed
               scalesPageToFit={false}  // Disable automatic scaling
               style={{ backgroundColor: 'transparent' }}  // Set background color to transparent
