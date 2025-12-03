@@ -56,7 +56,7 @@ const TraceAlphabet = (props: any) => {
             >
               <View
                 style={[styles.blueBackground]}
-                onTouchStart={() => setControlsVisible(true)} // Show controls on touch
+                onTouchStart={() => setControlsVisible(true)} 
               >
                 {selectedVideo && (
                     <VideoPlayer
