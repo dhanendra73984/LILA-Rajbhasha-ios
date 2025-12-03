@@ -61,7 +61,7 @@ const TraceAlphabet = (props: any) => {
                 {selectedVideo && (
                     <VideoPlayer
                       source={{ uri: selectedVideo }}
-                      videoWidth={100} // Set the video width to the window width
+                      videoWidth={100}
                       videoHeight={80} // Set the video height to the window height
                       autoplay
                       showDuration={true}
