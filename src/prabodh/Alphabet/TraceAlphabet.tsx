@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
   //   resizeMode: 'stretch', // Stretch the video
   // },
   blueBackground: {
-    backgroundColor: 'white', // Add your desired background color
+    backgroundColor: 'white', 
     marginTop:230
     
   },
